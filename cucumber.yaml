@@ -1,0 +1,24 @@
+---
+# Qunado utilizar o allure, para visualizar o relatório localmente
+# execute dentro da pasta logs: "allure serve allure_report"
+
+#default: -p ci
+default: -p chrome -p allure_test -p test -p ignore
+
+ci: -p allure -p json_report -p html_report -p chrome_headless -p prehom
+allure: --format progress --format AllureCucumber::CucumberFormatter --out=logs/allure_report
+allure_test: --format progress --format AllureCucumber::CucumberFormatter --out=logs/target/allure-results
+
+html_report: --format progress --format html --out=logs/features.html
+json_report: --format progress --format json --out=logs/features.json
+# json_report: --format json -o cucumber.json --out=logs/features.json
+xml_report: --format xml -o c
+
+chrome: BROWSERS=chrome
+firefox: BROWSERS=firefox
+chrome_headless: BROWSERS=chrome_headless
+firefox_headless: BROWSERS=firefox_headless
+
+test:  ENVIRONMENT_TYPE=test
+homolog:  ENVIRONMENT_TYPE=homolog
+ignore: --tags 'not @Ignored'
