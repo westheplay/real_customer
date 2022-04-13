@@ -8,7 +8,7 @@
 ## Configurações
 
 - Clone do repositório
-git clone [git@gitlab.poupex.com.br:poupex/laboratorio/qualidade/automacao-internet-banking.git](url)
+git clone [https://github.com/westheplay/real_customer.git](url)
 
 git checkout develop
 
