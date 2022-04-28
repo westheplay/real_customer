@@ -37,4 +37,22 @@ class PageHelper < SitePrism::Page
     date.strftime("%d/%m/%Y")
     calendar.add_business_days(date, dias).strftime("%d/%m/%Y")
   end
+
+
+  def clicar_botao_cancelar
+    puts 'clicar no botão cancelar'
+    click_button("Cancelar")
+  end
+  
+
+  def clicar_botao_confirmar
+    puts 'clicar no botão confirmar'
+    click_button("Confirmar")
+  end
+
+  def clicar_botao_generico(name)
+    puts "clicar no botão: #{name}"
+    click_button(name)
+  end
+
 end
