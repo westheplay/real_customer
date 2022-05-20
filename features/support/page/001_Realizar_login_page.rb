@@ -25,8 +25,16 @@ class LoguinPage < SitePrism::Page
 
   def logar_usuario_aleatorio(cpf)
     puts "Logar com o usuário #{cpf}"
-    nome_usuario.set(cpf)
+    input_email.set(cpf)
     senha.set("sem senha")
+    btn_entrar.click
+  end
+
+  def logar_usuario_admin()
+    puts "Logar com o usuário admin"
+    input_dominio_empresa.set("porto")
+    input_email.set("wesley.barros@tech4h.com.br")
+    input_senha.set("Tech123*")
     btn_entrar.click
   end
 

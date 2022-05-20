@@ -1,4 +1,4 @@
-class MsgPreDefinidasPage < SitePrism::Page
+class MsgPreDefinidasPage < PageHelper
 
     # Pega a URL default
     set_url ""
@@ -11,11 +11,11 @@ class MsgPreDefinidasPage < SitePrism::Page
 
     element :input_titulo, "#name"
     element :btn_buscar, '//*[contains(text(),"Buscar")]'
-    element :btn_adicionar_msg_predef, '//*[contains(text(),"Adicionar mensagem")]'
+    element :btn_adicionar_msg_predef, :xpath, '//*[contains(text(),"Adicionar mensagem")]'
     element :btn_editar, "#edittooltip0"
     element :btn_deletar, "#deletetooltip0"
-    element :input_imp_titulo, ".predefinedMessageName"
-    element :select_habilidades, ".predefinedMessageskill"
+    element :input_imp_titulo, "input[name='predefinedMessageName']"
+    element :select_habilidades, :xpath, "//label[contains(text(), 'Habilidades')]/../../div[2]/div/div//input"
     element :select_categoria, "#predefinedMessageCategories"
     element :input_imp_texto, '#predefinedMessageText'
     element :checkbox_ex_faq_global, :xpath, '//*[@id="layout-wrapper"]/div[2]/div//div[2]/div//table/tbody/tr[1]/td[6]'
@@ -114,6 +114,22 @@ class MsgPreDefinidasPage < SitePrism::Page
     def clicar_btn_cancelar
         puts "clicar btn cancelar"
         click_button('Cancelar')
+    end
+
+    def informar_titulo(titulo)
+        puts "setar o título: #{titulo}"
+        input_imp_titulo.set(titulo)
+    end
+
+    def informar_dados_msg
+        puts "Informar dados da mensagem"
+        input_imp_titulo.set("Teste Automatizado")
+        select_habilidades.set("CONTA_DIGITAL_CASHOUT")
+        select_habilidade.send_keys(:enter)
+        sleep(0.05)
+        select_categoria.select("teste")
+        sleep(0.05)
+        input_imp_texto.set("TESTES AUTOMATIZADOS")
     end
 
 

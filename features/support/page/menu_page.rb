@@ -13,7 +13,7 @@ class MenuPage < SitePrism::Page
     element :menu_area_agente, '//*[@class="bx bx-chat"]'
     element :menu_area_gestor, '//*[@class="bx bx-layout"]'
     element :menu_real_automation, '//*[@class="mdi mdi-ticket"]'
-    element :menu_mensagens_predefinidas, '//*[@class="bx bx-message-square-detail"]'
+    element :menu_mensagens_predefinidas, :xpath, '//*[@class="bx bx-message-square-detail"]'
     element :menu_roteiros, '//*[@class="bx bx-copy-alt"]'
     element :menu_empresa, '//*[@class="bx bx-store"]'
     element :menu_departamento, '//*[@class="bx bx-vector"]'
