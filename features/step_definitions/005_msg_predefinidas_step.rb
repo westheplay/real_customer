@@ -23,3 +23,30 @@ end
 Quando('informo os dados da mensagem') do
     MsgPreDefinidasPage.new.informar_dados_msg
 end
+
+
+
+
+
+Quando('clico no botão Buscar') do
+    MsgPreDefinidasPage.new.clicar_btn_buscar
+end
+
+Quando('clico em Editar mensagem') do
+    MsgPreDefinidasPage.new.clicar_btn_editar
+end
+
+Quando('edito os dados da mensgem') do
+    MsgPreDefinidasPage.new.alterar_dados_msg
+end
+
+
+
+
+Quando('clico em deletar mensagem') do
+    MsgPreDefinidasPage.new.clicar_btn_deletar
+end
+
+Quando('clico no botão delete sim') do
+    MsgPreDefinidasPage.new.clicar_btn_delete_sim
+end

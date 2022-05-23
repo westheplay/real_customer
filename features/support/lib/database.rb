@@ -1,5 +1,4 @@
 require "pg"
-require "oci8"
 
 class Database
 
