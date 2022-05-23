@@ -10,13 +10,14 @@ class MsgPreDefinidasPage < PageHelper
     
 
     element :input_titulo, "#name"
+    element :input_titulo_incluir, 'input[name="predefinedMessageName"]'
     element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
     element :btn_adicionar_msg_predef, :xpath, '//*[contains(text(),"Adicionar mensagem")]'
     element :btn_editar, "#edittooltip0"
     element :btn_deletar, "#deletetooltip0"
     element :input_imp_titulo, :xpath, '//*[@name="predefinedMessageName"]'
     element :select_habilidades, :xpath, "//label[contains(text(), 'Habilidades')]/../../div[2]/div/div//input"
-    element :select_categoria, "#predefinedMessageCategories"
+    element :select_categoria, :xpath, "//*[contains(text(), 'Categorias')]/../../div[2]/div/div//input"
     element :input_imp_texto, :xpath, '//*[@name="predefinedMessageText"]'
     element :checkbox_ex_faq_global, :xpath, '//*[@id="layout-wrapper"]/div[2]/div//div[2]/div//table/tbody/tr[1]/td[6]'
     element :checkbox_ex_faq_ativado, :xpath, '//*[@id="layout-wrapper"]/div[2]/div//div[2]/div//table/tbody/tr[1]/td[7]'
@@ -123,20 +124,30 @@ class MsgPreDefinidasPage < PageHelper
         click_button('Cancelar')
     end
 
+    def informar_titulo_edicao(titulo)
+        puts "setar o título: #{titulo}"
+        @titulo = recuperar_dados("features/arquivos/msg_predefinida.txt")
+        input_titulo.set(@titulo[0].to_s)
+    end
+
     def informar_titulo(titulo)
         puts "setar o título: #{titulo}"
-        input_titulo.set(titulo)
+        @titulo = recuperar_dados("features/arquivos/msg_predefinida.txt")
+        input_titulo_incluir.set(@titulo[0].to_s)
     end
 
     def informar_dados_msg
         puts "Informar dados da mensagem"
-        input_imp_titulo.set("Teste Automatizado")
-        select_habilidades.set("CONTA_DIGITAL_CASHOUT")
+        @alt = rand(100)
+        input_imp_titulo.set("Teste Automatizado #{@alt}")
+        @msg = input_imp_titulo.text
+        gravar_dados("features/arquivos/msg_predefinida.txt", @msg)
+        select_habilidades.set("teste")
+        sleep 2
         select_habilidades.send_keys(:enter)
-        sleep(0.05)
-        select_categoria.select("teste")
-        sleep(0.05)
-        input_imp_texto.set("TESTES AUTOMATIZADOS")
+        select_categoria.set("teste")
+        select_categoria.send_keys(:enter)
+        input_imp_texto.set("TESTES AUTOMATIZADOS #{@alt}")
     end
 
     def alterar_dados_msg

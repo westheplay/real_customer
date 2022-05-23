@@ -15,6 +15,10 @@ end
 Quando('informo o Título {string}') do |string|
     MsgPreDefinidasPage.new.informar_titulo(string)
 end
+
+Quando('informo o Título na tela de edição {string}') do |string|
+    MsgPreDefinidasPage.new.informar_titulo_edicao(string)
+end
   
 Quando('clico no botão Confirmar') do
     MsgPreDefinidasPage.new.clicar_btn_confirmar

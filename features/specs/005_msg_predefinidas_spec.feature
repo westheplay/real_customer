@@ -1,8 +1,8 @@
 #language: pt
 
-@Suite_loguin
-@Loguin
-Funcionalidade: loguin_001 - Realizar Loguin
+@Suite_msg_predefinidas
+@msg_predefinidas
+Funcionalidade: Mensagens predefinidas
     
     
     @validar_dados_obrigatorios
@@ -29,7 +29,7 @@ Funcionalidade: loguin_001 - Realizar Loguin
     Cenario: Alterar mensgem predefinida
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu mensagens predefidas
-        E informo o Título "Testes automatizados"
+        E informo o Título na tela de edição "Testes automatizados"
         E clico no botão Buscar
         E clico em Editar mensagem
         E edito os dados da mensgem
@@ -40,7 +40,7 @@ Funcionalidade: loguin_001 - Realizar Loguin
     Cenario: Deletar mensgem predefinida
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu mensagens predefidas
-        E informo o Título "Testes automatizados"
+        E informo o Título na tela de edição "Testes automatizados"
         E clico no botão Buscar
         E clico em deletar mensagem
         E clico no botão delete sim
