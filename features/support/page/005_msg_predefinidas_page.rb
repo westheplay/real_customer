@@ -138,6 +138,7 @@ class MsgPreDefinidasPage < PageHelper
 
     def informar_dados_msg
         puts "Informar dados da mensagem"
+        sleep 3
         @alt = rand(100)
         input_imp_titulo.set("Teste Automatizado #{@alt}")
         @msg = input_imp_titulo.text
