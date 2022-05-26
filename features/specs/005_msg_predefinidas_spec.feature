@@ -5,15 +5,6 @@
 Funcionalidade: Mensagens predefinidas
     
     
-    @validar_dados_obrigatorios
-    Cenario: Validar dados obrigatórios
-        Dado que eu esteja logado no sistema com um usuario admin
-        Quando eu acesso o menu mensagens predefidas
-        E clico no botão Adicionar mensagem predefinida
-        E informo o Título "Testes automatizados"
-        E clico no botão Confirmar
-        Entao o sistema deve exibir a mensagem "Selecione uma habilidade ou habilite o modo global"
-        E o sistema deve exibir a mensagem "Texto é obrigatório"
     
     @incluir_msg_predefinida
     Cenario: Incluir mensgem predefinida
@@ -24,6 +15,16 @@ Funcionalidade: Mensagens predefinidas
         # E adiciono um arquivo
         E clico no botão Confirmar
         Entao o sistema deve exibir a mensagem "Mensagem predefinida adicionada com sucesso"
+        
+    @validar_dados_obrigatorios
+    Cenario: Validar dados obrigatórios
+        Dado que eu esteja logado no sistema com um usuario admin
+        Quando eu acesso o menu mensagens predefidas
+        E clico no botão Adicionar mensagem predefinida
+        E informo o Título "Testes automatizados"
+        E clico no botão Confirmar
+        Entao o sistema deve exibir a mensagem "Selecione uma habilidade ou habilite o modo global"
+        E o sistema deve exibir a mensagem "Texto é obrigatório"
 
     @alterar_msg_predefinida
     Cenario: Alterar mensgem predefinida

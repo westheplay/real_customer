@@ -9,26 +9,26 @@ class MenuPage < SitePrism::Page
     # Elements
     
     
-    element :menu_mural, '//*[@class="bx bx-home-circle"]'
-    element :menu_area_agente, '//*[@class="bx bx-chat"]'
-    element :menu_area_gestor, '//*[@class="bx bx-layout"]'
-    element :menu_real_automation, '//*[@class="mdi mdi-ticket"]'
+    element :menu_mural, :xpath, '//*[@class="bx bx-home-circle"]'
+    element :menu_area_agente, :xpath, '//*[@class="bx bx-chat"]'
+    element :menu_area_gestor, :xpath, '//*[@class="bx bx-layout"]'
+    element :menu_real_automation, :xpath, '//*[@class="mdi mdi-ticket"]'
     element :menu_mensagens_predefinidas, :xpath, '//*[@class="bx bx-message-square-detail"]'
-    element :menu_roteiros, '//*[@class="bx bx-copy-alt"]'
-    element :menu_empresa, '//*[@class="bx bx-store"]'
-    element :menu_departamento, '//*[@class="bx bx-vector"]'
-    element :menu_perfis, '//*[@class="mdi mdi-account-lock"]'
+    element :menu_roteiros, :xpath, '//*[@class="bx bx-copy-alt"]'
+    element :menu_empresa, :xpath, '//*[@class="bx bx-store"]'
+    element :menu_departamentos, :xpath, '//*[@class="bx bx-vector"]'
+    element :menu_perfis, :xpath, '//*[@class="mdi mdi-account-lock"]'
     element :menu_usuarios, :xpath, '//*[@class="bx bxs-user-detail"]'
-    element :menu_grupos, '//*[@class="bx bx-group"]'
-    element :menu_canais, '//*[@class="bx bx-devices"]'
-    element :menu_habilidades, '//*[@class="bx bx-bookmark"]'
-    element :menu_disponibilidades, '//*[@class="bx bxs-toggle-right"]'
-    element :menu_tabulacoes, '//*[@class="mdi mdi-table"]'
-    element :menu_pesquisa, '//*[@class="mdi mdi-text-box-search-outline"]'
-    element :menu_mensagens_automaticas, 'class="mdi mdi-message-arrow-right-outline"'
-    element :menu_funcionalidades, '//*[@class="bx bxs-widget"]'
-    element :menu_murais, '//*[@class="mdi mdi-view-dashboard"]'
-    element :menu_metas, '//*[@class="mdi mdi-target"]'
+    element :menu_grupos, :xpath, '//*[@class="bx bx-group"]'
+    element :menu_canais, :xpath, '//*[@class="bx bx-devices"]'
+    element :menu_habilidades, :xpath, '//*[@class="bx bx-bookmark"]'
+    element :menu_disponibilidades, :xpath, '//*[@class="bx bxs-toggle-right"]'
+    element :menu_tabulacoes, :xpath, '//*[@class="mdi mdi-table"]'
+    element :menu_pesquisa, :xpath, '//*[@class="mdi mdi-text-box-search-outline"]'
+    element :menu_mensagens_automaticas, :xpath, 'class="mdi mdi-message-arrow-right-outline"'
+    element :menu_funcionalidades, :xpath, '//*[@class="bx bxs-widget"]'
+    element :menu_murais, :xpath, '//*[@class="mdi mdi-view-dashboard"]'
+    element :menu_metas, :xpath, '//*[@class="mdi mdi-target"]'
 
 
     # methods 
@@ -75,9 +75,9 @@ class MenuPage < SitePrism::Page
     
     
 
-    def clicar_menu_departamento
-        puts 'clicar no menu departamento'
-        menu_departamento.click
+    def clicar_menu_departamentos
+        puts 'clicar no menu departamentos'
+        menu_departamentos.click
     end
 
     
@@ -162,6 +162,14 @@ class MenuPage < SitePrism::Page
     def clicar_menu_metas
         puts 'clicar no menu metas'
         menu_metas.click
+    end
+
+
+    
+    
+    def clicar_menu_roteiros
+        puts 'clicar no menu roteiros'
+        menu_roteiros.click
     end
 
     

@@ -34,7 +34,7 @@ module FileHelper
   def gravar_dados(path, dados)
     @path = normalizar_path(path)
     File.open(@path, "w") do |file|
-      file.puts(dados[4..15])
+      file.puts(dados)
     end
   end
 

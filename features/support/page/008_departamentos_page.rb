@@ -1,4 +1,4 @@
-class MenuPage < SitePrism::Page
+class DepartamentosPage < SitePrism::Page
 
     # Pega a URL default
     set_url ""
@@ -13,8 +13,8 @@ class MenuPage < SitePrism::Page
     element :input_email, '#email'
     element :input_dominio_empresa, '#slug'
     element :input_email_departamento, '#registration-email'
-    element :btn_busca, '//*[contains(text(),"Buscar")]'
-    element :btn_adicionar_departamento, '//*[contains(text(),"Adicionar departamento")]'
+    element :btn_busca, :xpath, '//*[contains(text(),"Buscar")]'
+    element :btn_adicionar_departamento, :xpath, '//*[@id="new-department"]/a/button'
     element :btn_editar, '#edittooltip'
     element :btn_deletar, '#deletetooltip'
 
@@ -29,9 +29,9 @@ class MenuPage < SitePrism::Page
     end
    
     
-    def clicar_botao_adicionar_departamento
+    def clicar_btn_adicionar_departamento
         puts 'clicar no botão adicionar departamento '
-        botao_adicionar_departamento.click
+        btn_adicionar_departamento.click
     end
      
     
@@ -55,6 +55,20 @@ class MenuPage < SitePrism::Page
     def clicar_btn_cancelar
         puts "clicar btn cancelar"
         click_button('Cancelar')
+    end
+
+
+    def informar_nome(nome)
+        puts "setar o título: #{nome}"
+        input_nome.set(nome)
+    end
+
+
+
+    def informar_dados_departamento
+        puts "Informar dados do departamento"
+        input_nome.set("Teste Automatizado")
+        input_email.set("porto_teste@gmail.com")
     end
    
 
