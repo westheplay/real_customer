@@ -1,4 +1,4 @@
-class EmpresaPage < SitePrism::Page
+class EmpresaPage < PageHelper
 
     # Pega a URL default
     set_url ""

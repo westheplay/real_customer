@@ -1,4 +1,4 @@
-class RoteirosPage < SitePrism::Page
+class RoteirosPage < PageHelper
 
     # Pega a URL default
     set_url ""
@@ -11,7 +11,7 @@ class RoteirosPage < SitePrism::Page
 
     element :btn_buscar, :xpath, '//*[@type="submit"]'
     element :btn_adicionar_roteiro, "#new-script"
-    element :btn_editar, "#edittooltip0"
+    element :btn_editar, :xpath, '//*[@id="edittooltip0"]'
     element :btn_deletar, "#deletetooltip0"
     element :btn_escolher_arquivo, "#scriptFiles"
     element :input_titulo, "#name"
@@ -33,9 +33,9 @@ class RoteirosPage < SitePrism::Page
     
        
     
-    def preencher_input_criar_titulo(conteudo)
+    def preencher_input_titulo(conteudo)
         puts 'preencher no input criar titulo'
-        input_criar_titulo.set(conteudo)
+        input_titulo.set(conteudo)
     end
 
     def clicar_btn_buscar
@@ -75,40 +75,50 @@ class RoteirosPage < SitePrism::Page
         click_button('Cancelar')
     end
 
-    def informar_criar_titulo(criar_titulo)
-        puts "setar o criar título: #{criar_titulo}"
-        input_criar_titulo.set(criar_titulo)
-    end
-    
-
-    
-    def input_criar_titulo(titulo)
+    def informar_titulo_edicao(titulo)
         puts "setar o título: #{titulo}"
-        input_criar_titulo.set(titulo)
+        @titulo = recuperar_dados("features/arquivos/roteiro.txt")
+        input_titulo.set(@titulo[0].to_s)
     end
 
+    def informar_titulo(titulo)
+        puts "setar o título: #{titulo}"
+        @titulo = recuperar_dados("features/arquivos/roteiro.txt")
+        input_criar_titulo.set(@titulo[0].to_s)
+    end
+
+    
+    def informar_titulo_incluir
+        puts "setar o título: #{@titulo}"
+        @titulo = recuperar_dados("features/arquivos/roteiro.txt")
+        input_titulo.set(@titulo[0].to_s)
+    end
 
     def informar_dados_roteiro
-        puts "Informar dados do roteiro"
-        input_criar_titulo.set("Teste Automatizado")
-        select_habilidades.set("CONTA_DIGITAL_CASHOUT")
-        sleep(0.20)
+        puts "Informar dados da mensagem"
+        sleep 2
+        @alt = rand(100).chr
+        puts "valor gerado #{@alt}" 
+        input_criar_titulo.set("Teste Automatizado QA #{@alt}")
+        @msg = "Teste Automatizado QA #{@alt}"
+        gravar_dados("features/arquivos/roteiro.txt", @msg)
+        select_habilidades.set("teste")
+        sleep 2
         select_habilidades.send_keys(:enter)
-        sleep(0.05)
-        #select_categoria.select("dsfdsfdsdfsdfs")
-        sleep(0.05)
+        select_categoria.set("teste")
+        select_categoria.send_keys(:enter)
         input_texto.set("TESTES AUTOMATIZADOS")
     end
 
     def alterar_dados_roteiro
-        puts "Alterar dados do roteiro"
-        select_habilidades.set("AUTO_PANE_NF")
+        puts "Alterar dados da roteiro"
+        select_habilidades.set("CHAT_NUCLEO_AUTO")
+        sleep 2
         select_habilidades.send_keys(:enter)
-        #find("#predefinedMessageCategories").native.clear
-        #select_categoria.select("paulo")
-        sleep(0.05)
-        #input_imp_texto.clean
-        input_texto.set("ALTERAÇÃO TESTES AUTOMATIZADOS")
+        select_categoria.set("teste alterar")
+        select_categoria.send_keys(:enter)
+        sleep 2
+        input_texto.set("ALTERAÇÃO TESTES QA")
 
     end
 

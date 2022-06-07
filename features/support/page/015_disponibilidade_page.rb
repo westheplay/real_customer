@@ -1,4 +1,4 @@
-class DisponibilidadePage < SitePrism::Page
+class DisponibilidadePage < PageHelper
 
     # Pega a URL default
     set_url ""

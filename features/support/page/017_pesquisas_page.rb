@@ -1,4 +1,4 @@
-class PesquisasPage < SitePrism::Page
+class PesquisasPage < PageHelper
 
     # Pega a URL default
     set_url ""

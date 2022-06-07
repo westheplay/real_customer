@@ -1,4 +1,4 @@
-class HabilidadesPage < SitePrism::Page
+class HabilidadesPage < PageHelper
 
     # Pega a URL default
     set_url ""

@@ -1,4 +1,4 @@
-class MuralPage < SitePrism::Page
+class MuralPage < PageHelper
 
     # Pega a URL default
     set_url ""

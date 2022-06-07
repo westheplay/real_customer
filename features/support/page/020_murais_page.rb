@@ -1,4 +1,4 @@
-class MuraisPage < SitePrism::Page
+class MuraisPage < PageHelper
 
     # Pega a URL default
     set_url ""

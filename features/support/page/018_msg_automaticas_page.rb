@@ -1,4 +1,4 @@
-class MensagensAutomaticasPage < SitePrism::Page
+class MensagensAutomaticasPage < PageHelper
 
     # Pega a URL default
     set_url ""

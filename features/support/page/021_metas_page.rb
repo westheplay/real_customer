@@ -1,4 +1,4 @@
-class MetasPage < SitePrism::Page
+class MetasPage < PageHelper
 
     # Pega a URL default
     set_url ""

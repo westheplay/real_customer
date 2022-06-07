@@ -1,4 +1,4 @@
-class MenuPage < SitePrism::Page
+class MenuPage < PageHelper
 
     # Pega a URL default
     set_url ""

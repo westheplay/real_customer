@@ -1,4 +1,4 @@
-class TabulacoesPage < SitePrism::Page
+class TabulacoesPage < PageHelper
 
     # Pega a URL default
     set_url ""

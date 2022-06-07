@@ -13,8 +13,8 @@ class MsgPreDefinidasPage < PageHelper
     element :input_titulo_incluir, 'input[name="predefinedMessageName"]'
     element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
     element :btn_adicionar_msg_predef, :xpath, '//*[contains(text(),"Adicionar mensagem")]'
-    element :btn_editar, "#edittooltip0"
-    element :btn_deletar, "#deletetooltip0"
+    element :btn_editar, "#edit"
+    element :btn_deletar, :xpath, '//*[@id="deletetooltip0"]'
     element :input_imp_titulo, :xpath, '//*[@name="predefinedMessageName"]'
     element :select_habilidades, :xpath, "//label[contains(text(), 'Habilidades')]/../../div[2]/div/div//input"
     element :select_categoria, :xpath, "//*[contains(text(), 'Categorias')]/../../div[2]/div/div//input"

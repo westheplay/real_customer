@@ -1,4 +1,4 @@
-class UsuariosPage < SitePrism::Page
+class UsuariosPage < PageHelper
 
     # Pega a URL default
     set_url ""
@@ -10,17 +10,18 @@ class UsuariosPage < SitePrism::Page
     
     
     element :input_filtrar, ".name"
-    element :select_habilidade, "//*[contains(text(), 'Todas as habilidades')]"
-    element :select_grupo, '//*[contains(text(), "Todos os grupos")]'
-    element :select_perfil, "//*[contains(text(), 'Todos os perfis')]"
-    element :select_status, "//*[contains(text(), 'Todos os status')]"
-    element :btn_filtrar, '//*[@class="av-valid"]/div[2]/div/div/button'
-    element :btn_buscar, '//*[contains(text(),"Buscar")]'
-    element :btn_adicionar_usuario, '//*[contains(text(),"Adicionar usuário")]'
-    element :btn_acao, '//*[contains(text(),"Ação")]'
-    element :btn_generate_passuord, '//*[contains(text(), "Generate")]'
+    element :select_habilidade, :xpath, '//*[contains(text(),"Todas as habilidades")]'
+    element :select_grupo, :xpath, '//*[contains(text(),"Todos os grupos")]'
+    element :select_usuario, :xpath, "//*[contains(text(), 'Todos os perfis')]"
+    element :select_status, :xpath, "//*[contains(text(), 'Todos os status')]"
+    element :btn_editar_usuario, "#edittooltip0"
+    element :btn_filtrar, :xpath, '//*[@class="av-valid"]/div[2]/div/div/button'
+    element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
+    element :btn_adicionar_usuario, :xpath, '//*[contains(text(),"Adicionar usuário")]'
+    element :btn_acao, :xpath, '//*[contains(text(),"Ação")]'
+    element :btn_generate_passuord, :xpath, '//*[contains(text(), "Generate")]'
     element :input_name, '#name'
-    element :input_email, "#registrationemail"
+    element :input_email, "#registration-email"
     element :input_maximo_conversa, "#max-chats"
     element :input_apelido, "#nickname"
     element :input_matricula, "#matricula"
@@ -28,15 +29,24 @@ class UsuariosPage < SitePrism::Page
     element :input_nova_senha, :xpath, '//*[@class="form-control"]'
     element :input_confirmar_senha, :xpath, '//*[@class="form-control "]'
     element :select_perfil, "#profile"
-    element :select_habilidade, :xpath, '//*[@class="control-label"]/../../div[2]/div[1]'
-    element :select_grupo, :xpath, '//*[@class="control-label"]/../../div[3]/div[1]'
-
-
-
-
+    element :input_habilidade_criar, :xpath, '//*[contains(text(),"Habilidades")]/../div//input'
+    element :input_grupo_criar, :xpath, "//*[contains(text(), 'Grupo')]/../div//input"
+    
 
 
      # methods 
+
+
+     def informar_nome_consulta
+        puts "setar o nome na tela de consulta"
+        input_name.set("Teste Automatizado usuario")
+    end
+
+
+   def informar_nome
+       puts "setar o nome do usuario"
+       input_name.set("Teste Automatizado usuario")
+   end
 
 
 
@@ -45,7 +55,12 @@ class UsuariosPage < SitePrism::Page
         btn_filtrar.click
     end
 
-    
+
+    def btn_editar_usuario
+        puts 'clicar no botao editar usuario'
+        btn_editar_usuario.click
+    end
+
 
     def clicar_btn_buscar
         puts 'clicar no btn buscar'
@@ -77,9 +92,48 @@ class UsuariosPage < SitePrism::Page
         puts "clicar btn cancelar"
         click_button('Cancelar')
     end
+
+
     
+    def informar_dados_usuario
+        puts "Informar dados do usuario"
+        sleep 1
+        
+        input_name.set("usuario Teste Automatizado")
+        @msg = "usuario Teste Automatizado"
+        gravar_dados("features/arquivos/usuario.txt", @msg)
+        @alt = rand(100)
+        input_email.set("robsonteste#{@alt}@tech.com")
+        input_maximo_conversa.set("2")
+        input_apelido.set("testeQA")
+        sleep 2
+        select_perfil.select("agent")
+        input_habilidade_criar.set("TESTE_AUTOMACOES")
+        input_habilidade_criar.send_keys(:enter)
+        sleep 2
+        input_grupo_criar.set("Grupo")
+        input_grupo_criar.send_keys(:enter)
+        sleep 2
+        input_nova_senha.set("Tech123*")
+        input_confirmar_senha.set("Tech123*")
+    end
 
 
-
+    def alterar_dados_usuario
+        puts "alterar dados do usuario"
+        @titulo = recuperar_dados("features/arquivos/usuario.txt")
+        input_name.set(@titulo[0].to_s)
+        @alt = rand(100)
+        input_email.set("robsonteste#{@alt}@tech.com")
+        input_maximo_conversa.set("2")
+        input_apelido.set("testeQA")
+        sleep 2
+        select_perfil.select("manager")
+        sleep 2
+        input_habilidade_criar.set("CHAT_NUCLEO_AUTO")
+        input_habilidade_criar.send_keys(:enter)
+        input_grupo_criar.set("Grupo Teste Um")
+        input_grupo_criar.send_keys(:enter)
+    end
 
 end    

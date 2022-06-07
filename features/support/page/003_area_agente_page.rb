@@ -1,4 +1,4 @@
-class AreaDoAgentePage < SitePrism::Page
+class AreaDoAgentePage < PageHelper
 
     # Pega a URL default
     set_url ""

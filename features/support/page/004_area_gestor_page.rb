@@ -1,4 +1,4 @@
-class AreaGestorPage < SitePrism::Page
+class AreaGestorPage < PageHelper
 
     # Pega a URL default
     set_url ""

@@ -14,7 +14,7 @@ Quando('clico no botão Adicionar roteiro') do
 end 
 
 Quando('adiciono o Título {string}') do |string|
-    RoteirosPage.new.input_criar_titulo(string)
+    RoteirosPage.new.informar_titulo(string)
 end
 
 Quando('informo os dados do roteiro') do
@@ -36,3 +36,6 @@ Quando('clico em deletar roteiro') do
     RoteirosPage.new.clicar_btn_deletar
 end
 
+Quando('informo o Título na tela de consulta') do
+    RoteirosPage.new.informar_titulo_incluir
+end

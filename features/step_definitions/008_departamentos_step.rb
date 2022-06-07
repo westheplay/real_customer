@@ -20,3 +20,24 @@ end
 Quando('informo os dados do departamento') do
     DepartamentosPage.new.informar_dados_departamento
 end
+
+Quando('clico em deletar departamento') do
+    DepartamentosPage.new.clicar_btn_deletar
+end
+
+
+Quando('clico em Editar departamento') do
+   DepartamentosPage.new.clicar_btn_editar
+end
+
+Quando('edito os dados do departamento') do
+   DepartamentosPage.new.alterar_dados_departamento
+end
+Quando('eu acesso o menu Departamentos') do
+  MenuPage.new.clicar_menu_departamentos
+end
+
+
+Quando('informo o nome na tela de conslta') do
+    DepartamentosPage.new.informar_nome_incluir
+end
