@@ -75,8 +75,9 @@ class DepartamentosPage < PageHelper
 
 
     def informar_nome
-        puts "setar o título: #{nome}"
-        input_nome.set(nome)
+        puts "setar o título: #{@titulo}"
+        @titulo = recuperar_dados("features/arquivos/departamento.txt")
+        input_nome.set(@titulo[0].to_s)
     end
 
 

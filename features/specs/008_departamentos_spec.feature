@@ -12,14 +12,14 @@ Funcionalidade: Departamentos
         E clico no botão Adicionar departamento
         E informo os dados do departamento
         E clico no botão Confirmar
-        Entao o sistema deve exibir a mensagem "departamento adicionado com sucesso"
+        Entao o sistema deve exibir a mensagem "Departamento adicionado com sucesso"
     
     @validar_dados_obrigatorios_departamentos
     Cenario: Validar dados obrigatórios departamentos
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu Departamentos
         E clico no botão Adicionar departamento
-        E informo o Nome "Testes departamento"
+        E informo o Nome 
         E clico no botão Confirmar
         Entao o sistema deve exibir a mensagem "Campo obrigatório"
 
@@ -32,8 +32,9 @@ Funcionalidade: Departamentos
         E clico em Editar departamento
         E edito os dados do departamento
         E clico no botão Confirmar
-        Entao o sistema deve exibir a mensagem "departamento atualizado com sucesso"
-        
+        Entao o sistema deve exibir a mensagem "Departamento atualizado com sucesso"
+
+    @Ignored   
     @deletar_departamentos
     Cenario: Deletar departamento
         Dado que eu esteja logado no sistema com um usuario admin
@@ -42,5 +43,5 @@ Funcionalidade: Departamentos
         E clico no botão Buscar
         E clico em deletar departamento
         E clico no botão delete sim
-        Entao o sistema deve exibir a mensagem "departamento deletada com sucesso"    
-        
+        Entao o sistema deve exibir a mensagem "Departamento deletado com sucesso"    
+       

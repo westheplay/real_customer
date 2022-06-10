@@ -84,10 +84,13 @@ class PerfisPage < PageHelper
 
     def informar_dados_perfil
         puts "Informar dados do perfil"
+        variavel_texto = ['abc', 'aei', 'fgj', 'fgy']
+        variavel_random = rand(5)
+        @teste = variavel_texto[variavel_random]
         sleep 1
-        input_profile_nome.set("Perfil Teste Automatizado")
-        @msg = "Perfil Teste Automatizado"
-        gravar_dados("features/arquivos/perfis.txt", @msg)
+        input_profile_nome.set("Perfil #{@teste} Teste Automatizado")
+        @msg = "Perfil #{@teste} Teste Automatizado"
+        gravar_dados("features/arquivos/perfil.txt", @msg)
         sleep 2
         select_tipo_permissao.select("agent")
         sleep 2
@@ -97,7 +100,9 @@ class PerfisPage < PageHelper
 
     def alterar_dados_perfil
         puts "alterar dados do perfil"
-        #select_tipo_permissao.select("manager")
+        @titulo = recuperar_dados("features/arquivos/perfil.txt")
+        input_profile_nome.set(@titulo[0].to_s)
+        select_tipo_permissao.select("manager")
         sleep 2
         input_descricao.set("alterando teste automatizado")
         #execute_script("document.querySelector('#role') = 'manager'")

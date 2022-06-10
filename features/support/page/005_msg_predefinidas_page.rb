@@ -39,6 +39,7 @@ class MsgPreDefinidasPage < PageHelper
     def clicar_btn_confirmar
         puts 'clicar no botão confirmar'
         btn_confirmar.click
+        sleep 2
     end
     
     

@@ -41,3 +41,8 @@ end
 Quando('informo o nome na tela de conslta') do
     DepartamentosPage.new.informar_nome_incluir
 end
+
+
+Quando('informo o Nome') do
+    DepartamentosPage.new.informar_nome
+  end
