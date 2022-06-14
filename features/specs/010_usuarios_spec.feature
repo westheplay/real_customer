@@ -27,7 +27,7 @@ Funcionalidade: usuarios
     Cenario: Alterar usuario
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu usuarios
-        E informo o nome na tela de consulta
+        E informo o nome na tela de consulta usuário
         E clico no botão Buscar usuario
         E clico em Editar usuario
         E edito os dados do usuario

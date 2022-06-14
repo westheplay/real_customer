@@ -27,7 +27,7 @@ Funcionalidade: Departamentos
     Cenario: Alterar departamento
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu departamentos
-        E informo o nome na tela de conslta
+        E informo o nome na tela de consulta departamento
         E clico no botão Buscar
         E clico em Editar departamento
         E edito os dados do departamento
@@ -39,7 +39,7 @@ Funcionalidade: Departamentos
     Cenario: Deletar departamento
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu departamentos
-        E informo o nome na tela de conslta
+        E informo o nome na tela de consulta departamento
         E clico no botão Buscar
         E clico em deletar departamento
         E clico no botão delete sim

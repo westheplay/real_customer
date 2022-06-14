@@ -28,7 +28,7 @@ Funcionalidade: grupos
     Cenario: Alterar grupo
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu grupos
-        E informo o nome na tela de conslta grupo
+        E informo o nome na tela de consulta grupo
         E clico no botão Buscar
         E clico em Editar grupo
         E edito os dados do grupo
@@ -40,7 +40,7 @@ Funcionalidade: grupos
     Cenario: Deletar grupo
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu grupos
-        E informo o nome na tela de conslta grupo
+        E informo o nome na tela de consulta grupo
         E clico no botão Buscar
         E clico em deletar grupo
         E clico no botão delete sim
