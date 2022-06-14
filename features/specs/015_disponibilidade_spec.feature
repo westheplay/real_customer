@@ -42,4 +42,4 @@ Funcionalidade: disponibilidade
         E clico no botão Buscar
         E clico em deletar disponibilidade
         E clico no botão delete sim
-        Entao o sistema deve exibir a mensagem "Status excluído" 
+        Entao o sistema deve exibir a mensagem "Status excluída" 

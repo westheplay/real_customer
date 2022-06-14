@@ -13,7 +13,7 @@ class DisponibilidadePage < PageHelper
     element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
     element :btn_adicionar_disponibilidades, :xpath, '//*[contains(text(),"Adicionar Disponibilidades")]'
     element :btn_editar, "#edit", match: :first
-    element :btn_deletar, "#deletetooltip41a5be96-6bae-48aa-97b0-178d7273fadf"                         
+    element :btn_deletar, "#deletetooltipc37a5205-a3b1-46e6-b5f0-212eb051e740"                        
     element :input_descricao, "#description"
     element :select_tipo, "#type"
 
@@ -22,8 +22,8 @@ class DisponibilidadePage < PageHelper
      # methods 
 
     def informar_nome_consulta_disponibilidade
-        puts 'informar nome na tela de consulta'
-        input_name.set("Disponibilidade teste")
+        @titulo = recuperar_dados("features/arquivos/disponibilidade.txt")
+        input_name.set(@titulo[0].to_s)
     end
 
     
@@ -31,7 +31,8 @@ class DisponibilidadePage < PageHelper
     
     def preencher_input_name
         puts 'preencher no input name'
-        input_name.set("Disponibilidade teste")
+        @titulo = recuperar_dados("features/arquivos/disponibilidade.txt")
+        input_name.set(@titulo[0].to_s)
     end
 
     
@@ -80,7 +81,7 @@ class DisponibilidadePage < PageHelper
         variavel2 = rand(5)
         teste = variavel_nome[variavel2]
         input_name.set("Disponibilidade teste #{teste}")
-        @msg = "canal Teste Automatizado"
+        @msg = "Disponibilidade teste #{teste}"
         gravar_dados("features/arquivos/disponibilidade.txt", @msg)
         select_tipo.select("AUSENTE")
         input_descricao.set("teste disponibilidade descrição")
@@ -91,7 +92,7 @@ class DisponibilidadePage < PageHelper
         puts "editar dados disponibilidade"
         @titulo = recuperar_dados("features/arquivos/disponibilidade.txt")
         input_name.set(@titulo[0].to_s)
-        #select_tipo.select("PRÉ PAUSA")
+        select_tipo.select("PRÉ-PAUSA")
         input_descricao.set("teste disponibilidade descrição teste")
     end
 
