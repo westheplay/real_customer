@@ -29,7 +29,7 @@ Quando('edito os dados do grupo') do
   GruposPage.new.alterar_dados_grupo
 end
 
-Quando('informo o nome na tela de conslta grupo') do
+Quando('informo o nome na tela de consulta grupo') do
   GruposPage.new.informar_nome_consulta
 end
 

@@ -28,13 +28,13 @@ Quando('informo o nome do usuario') do
 end
 
 Quando('clico em Editar usuario') do
-    UsuariosPage.new.btn_editar_usuario
+    UsuariosPage.new.clicar_btn_editar_usuario
 end
 
 Quando('edito os dados do usuario') do
     UsuariosPage.new.alterar_dados_usuario
 end
 
-Quando('informo o nome na tela de consulta') do
+Quando('informo o nome na tela de consulta usuário') do
     UsuariosPage.new.informar_nome_consulta
   end

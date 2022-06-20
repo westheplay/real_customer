@@ -13,7 +13,11 @@ class DisponibilidadePage < PageHelper
     element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
     element :btn_adicionar_disponibilidades, :xpath, '//*[contains(text(),"Adicionar Disponibilidades")]'
     element :btn_editar, "#edit", match: :first
+<<<<<<< HEAD
     element :btn_deletar, "#deletetooltipc37a5205-a3b1-46e6-b5f0-212eb051e740", match: :first
+=======
+    element :btn_deletar, :xpath, "//*[contains(@id, 'deletetooltip')]", match: :first              
+>>>>>>> origin/main
     element :input_descricao, "#description"
     element :select_tipo, "#type"
 
@@ -77,11 +81,10 @@ class DisponibilidadePage < PageHelper
 
     def informar_dados_disponibilidade
         puts "informar dados disponibilidade"
-        variavel_nome = ['abb', 'aaa', 'fgj', 'fgy']
-        variavel2 = rand(5)
-        teste = variavel_nome[variavel2]
-        input_name.set("Disponibilidade teste #{teste}")
-        @msg = "Disponibilidade teste #{teste}"
+        variavel = ['abb', 'aaa', 'fgj', 'fgy', 'wsdl', 'mva', 'xfb']
+        @i = rand(6)
+        input_name.set("Disponibilidade teste #{variavel[@i]}")
+        @msg = "Disponibilidade teste #{variavel[@i]}"
         gravar_dados("features/arquivos/disponibilidade.txt", @msg)
         select_tipo.select("AUSENTE")
         input_descricao.set("teste disponibilidade descrição")
@@ -91,7 +94,7 @@ class DisponibilidadePage < PageHelper
     def editar_dados_disponibilidade
         puts "editar dados disponibilidade"
         @titulo = recuperar_dados("features/arquivos/disponibilidade.txt")
-        input_name.set(@titulo[0].to_s)
+        # input_name.set(@titulo[0].to_s)
         select_tipo.select("PRÉ-PAUSA")
         input_descricao.set("teste disponibilidade descrição teste")
     end

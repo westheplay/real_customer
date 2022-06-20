@@ -27,7 +27,7 @@ Funcionalidade: Perfis
     Cenario: Alterar perfil
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu perfis
-        E informo o nome na tela de conslta perfil
+        E informo o nome na tela de consulta perfil
         E clico no botão Buscar
         E clico em Editar perfil
         E edito os dados do perfil
@@ -38,7 +38,7 @@ Funcionalidade: Perfis
     Cenario: Deletar perfil
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu perfis
-        E informo o nome na tela de conslta perfil
+        E informo o nome na tela de consulta perfil
         E clico no botão Buscar
         E clico em deletar perfil
         E clico no botão delete sim

@@ -95,6 +95,7 @@ class DepartamentosPage < PageHelper
         input_nome.set("Teste Automatizado teste")
         select_habilidades.send_keys(:enter)
         sleep(0.05)
+        input_criar_email.clean
         input_criar_email.set("testeautomatizado123@gmail.com")
     end
 

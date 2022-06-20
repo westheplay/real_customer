@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Teste Automatizado 50
+=======
+Teste Automatizado 83
+>>>>>>> origin/main

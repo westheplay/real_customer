@@ -14,7 +14,11 @@ class UsuariosPage < PageHelper
     element :select_grupo, :xpath, '//*[contains(text(),"Todos os grupos")]'
     element :select_usuario, :xpath, "//*[contains(text(), 'Todos os perfis')]"
     element :select_status, :xpath, "//*[contains(text(), 'Todos os status')]"
+<<<<<<< HEAD
     element :btn_editar_usuario, "#edittooltip0", match: :first
+=======
+    element :btn_editar_usuario, "#edit", match: :first
+>>>>>>> origin/main
     element :btn_filtrar, :xpath, '//*[@class="av-valid"]/div[2]/div/div/button'
     element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]/../../../button/div/div'
     element :btn_adicionar_usuario, :xpath, '//*[contains(text(),"Adicionar usuário")]'
@@ -55,9 +59,8 @@ class UsuariosPage < PageHelper
         btn_filtrar.click
     end
 
-
-    def btn_editar_usuario
-        puts 'clicar no botao editar usuario'
+    def clicar_btn_editar_usuario
+        puts 'Clicar em editar usuário'
         btn_editar_usuario.click
     end
 

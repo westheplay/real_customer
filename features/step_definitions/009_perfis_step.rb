@@ -29,7 +29,7 @@ Quando('clico em deletar perfil') do
   PerfisPage.new.click_btn_deletar
 end
 
-Quando('informo o nome na tela de conslta perfil') do
+Quando('informo o nome na tela de consulta perfil') do
   PerfisPage.new.informar_nome_consulta_perfil
 end
 
