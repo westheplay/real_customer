@@ -29,9 +29,16 @@ class MenuPage < PageHelper
     element :menu_funcionalidades, :xpath, '//*[@class="bx bxs-widget"]'
     element :menu_murais, :xpath, '//*[@class="mdi mdi-view-dashboard"]'
     element :menu_metas, :xpath, '//*[@class="mdi mdi-target"]'
+    element :menu_execao, :xpath, '//*[@id="side-menu"]/li[14]/a/i'
 
 
     # methods 
+
+    
+    def clicar_menu_execao
+        puts 'clicar no menu exeção'
+        menu_execao.click
+    end
 
     def clicar_menu_mural
         puts 'clicar no menu mural'

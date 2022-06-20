@@ -24,3 +24,4 @@ gem 'ruby-oci8', '~> 2.2', '>= 2.2.9'
 
 #gem 'wicked_pdf'
 #gem  'wkhtmltopdf-binary'
+gem 'solargraph', grupo: :desenvolvimento

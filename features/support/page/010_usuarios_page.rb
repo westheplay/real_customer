@@ -14,9 +14,9 @@ class UsuariosPage < PageHelper
     element :select_grupo, :xpath, '//*[contains(text(),"Todos os grupos")]'
     element :select_usuario, :xpath, "//*[contains(text(), 'Todos os perfis')]"
     element :select_status, :xpath, "//*[contains(text(), 'Todos os status')]"
-    element :btn_editar_usuario, "#edittooltip0"
+    element :btn_editar_usuario, "#edittooltip0", match: :first
     element :btn_filtrar, :xpath, '//*[@class="av-valid"]/div[2]/div/div/button'
-    element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
+    element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]/../../../button/div/div'
     element :btn_adicionar_usuario, :xpath, '//*[contains(text(),"Adicionar usuário")]'
     element :btn_acao, :xpath, '//*[contains(text(),"Ação")]'
     element :btn_generate_passuord, :xpath, '//*[contains(text(), "Generate")]'
@@ -63,7 +63,7 @@ class UsuariosPage < PageHelper
 
 
     def clicar_btn_buscar
-        puts 'clicar no btn buscar'
+        puts 'clicar no btn buscar usuario'
         btn_buscar.click
     end
 
@@ -98,9 +98,11 @@ class UsuariosPage < PageHelper
     def informar_dados_usuario
         puts "Informar dados do usuario"
         sleep 1
-        
-        input_name.set("usuario Teste Automatizado")
-        @msg = "usuario Teste Automatizado"
+        variavel_texto = ['abc', 'aei', 'fgj', 'fgy']
+        variavel_random = rand(5)
+        @teste = variavel_texto[variavel_random]
+        input_name.set("usuario #{@teste} Teste Automatizado")
+        @msg = "usuario #{@teste} Teste Automatizado"
         gravar_dados("features/arquivos/usuario.txt", @msg)
         @alt = rand(100)
         input_email.set("robsonteste#{@alt}@tech.com")

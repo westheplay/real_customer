@@ -10,7 +10,7 @@ class HabilidadesPage < PageHelper
     
     
     element :input_name, "#name"
-    element :btn_buscar, '//*[@type="submit"]'
+    element :btn_buscar, :xpath, '//*[@type="submit"]'
     element :btn_adicionar_habilidades, '//*[contains(text(),"Adicionar habilidade")]'
     element :btn_usuario_btn, :xpath, '//*[@class="list-user-dropdown dropleft dropdown show"]'
     element :btn_editar, "#edittooltip0"
@@ -41,21 +41,21 @@ class HabilidadesPage < PageHelper
     element :select_padrao, "id54531659-2995-4cd8-800c-6517710acaf9"
     element :switch_distribuicao_avancada, '//*[contains(text(),"Distribuição avançada")]/../../div/div[1]/div'
     element :switch_fechamento_automatico, "#eventToggle-autoClose"
-    element :switch_tranferencia_automatica, '//*[contains(text(),"Transferência automática")]/../../div[1]/div'
-    element :switch_retorno_inatividade, '//*[contains(text(),"retorno da inatividade")]'
-    element :switch_inatividade, '//*[contains(text(),"Inatividade")]'
-    element :switch_Usabilidade, '//*[contains(text(),"Usabilidade")]'
-    element :input_fechar_inativa, '//*[contains(text(),"Fechar conversas inativas")]/../../div[2]'
-    element :select_inativas_dias, '//*[contains(text(),"Fechar conversas inativas")]/../../div[3]'
-    element :select_transfere_inativas, '//*[contains(text(),"Transferir conversas inativas")]/../../div[2]'
-    element :input_tranferir_inativa_ex, '//*[contains(text(),"Transferir conversas inativas")]/../../../div[3]/div[2]'
-    element :select__inativa_apos_minutos, '//*[contains(text(),"Transferir conversas inativas")]/../../../div[3]/div[3]'
-    element :input__ociosidade_cliente_ex, '//*[contains(text(),"Ociosidade do cliente")]/../../../div[3]/div[2]'
-    element :select__ociosidade_cliente_minutos, '//*[contains(text(),"Ociosidade do cliente")]/../../../div[3]/div[3]'
-    element :input__ociosidade_fila_ex, '//*[contains(text(),"Ociosidade na fila")]/../../../div[3]/div[2]'
-    element :select__ociosidade_fila_minutos, '//*[contains(text(),"Ociosidade na fila")]/../../../div[3]/div[3]'
-    element :select__ociosidade_agente_ex, '//*[contains(text(),"Ociosidade do agente")]/../../../div[3]/div[2]'
-    element :select__ociosidade_agente_minutos, '//*[contains(text(),"Ociosidade do agente")]/../../../div[3]/div[3]'
+    element :switch_tranferencia_automatica, :xpath, '//*[contains(text(),"Transferência automática")]/../../div[1]/div'
+    element :switch_retorno_inatividade, :xpath, '//*[contains(text(),"retorno da inatividade")]'
+    element :switch_inatividade, :xpath, '//*[contains(text(),"Inatividade")]'
+    element :switch_Usabilidade, :xpath, '//*[contains(text(),"Usabilidade")]'
+    element :input_fechar_inativa, :xpath, '//*[contains(text(),"Fechar conversas inativas")]/../../div[2]'
+    element :select_inativas_dias, :xpath, '//*[contains(text(),"Fechar conversas inativas")]/../../div[3]'
+    element :select_transfere_inativas, :xpath, '//*[contains(text(),"Transferir conversas inativas")]/../../div[2]'
+    element :input_tranferir_inativa_ex, :xpath, '//*[contains(text(),"Transferir conversas inativas")]/../../../div[3]/div[2]'
+    element :select__inativa_apos_minutos, :xpath, '//*[contains(text(),"Transferir conversas inativas")]/../../../div[3]/div[3]'
+    element :input__ociosidade_cliente_ex, :xpath, '//*[contains(text(),"Ociosidade do cliente")]/../../../div[3]/div[2]'
+    element :select__ociosidade_cliente_minutos, :xpath, '//*[contains(text(),"Ociosidade do cliente")]/../../../div[3]/div[3]'
+    element :input__ociosidade_fila_ex, :xpath, '//*[contains(text(),"Ociosidade na fila")]/../../../div[3]/div[2]'
+    element :select__ociosidade_fila_minutos, :xpath, '//*[contains(text(),"Ociosidade na fila")]/../../../div[3]/div[3]'
+    element :select__ociosidade_agente_ex, :xpath, '//*[contains(text(),"Ociosidade do agente")]/../../../div[3]/div[2]'
+    element :select__ociosidade_agente_minutos, :xpath, '//*[contains(text(),"Ociosidade do agente")]/../../../div[3]/div[3]'
 
 
 
