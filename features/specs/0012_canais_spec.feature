@@ -2,7 +2,7 @@
 
 @Suite_canais
 @canais
-Funcionalidade: canais
+Funcionalidade: Canais
 
          
     @incluir_canais
@@ -38,7 +38,7 @@ Funcionalidade: canais
     Cenario: Deletar canal
         Dado que eu esteja logado no sistema com um usuario admin
         Quando eu acesso o menu canais
-        E informo o nome na tela de conslta canal
+        E informo o nome na tela de consulta canal
         E clico no botão Buscar
         E clico em deletar canal
         E clico no botão delete sim

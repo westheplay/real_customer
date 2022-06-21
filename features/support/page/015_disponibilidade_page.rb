@@ -13,11 +13,7 @@ class DisponibilidadePage < PageHelper
     element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
     element :btn_adicionar_disponibilidades, :xpath, '//*[contains(text(),"Adicionar Disponibilidades")]'
     element :btn_editar, "#edit", match: :first
-<<<<<<< HEAD
-    element :btn_deletar, "#deletetooltipc37a5205-a3b1-46e6-b5f0-212eb051e740", match: :first
-=======
     element :btn_deletar, :xpath, "//*[contains(@id, 'deletetooltip')]", match: :first              
->>>>>>> origin/main
     element :input_descricao, "#description"
     element :select_tipo, "#type"
 

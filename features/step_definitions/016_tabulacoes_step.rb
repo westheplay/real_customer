@@ -5,38 +5,38 @@ Dado('que eu esteja logado no sistema com um usuario autorizado') do
   end
 
 
-Quando('eu acesso o menu tabulacoes') do
+Quando('eu acesso o menu tabulações') do
     MenuPage.new.clicar_menu_tabulacoes
   end
   
-  Quando('clico no botão Adicionar tabulacoes') do
-    TabulacoesPage.new.clicar_btn_adicionar_tabulacoes
+  Quando('clico no botão Adicionar tabulações') do
+    TabulaçõesPage.new.clicar_btn_adicionar_tabulacoes
   end
   
-  Quando('informo os dados da tabulacao') do
-    TabulacoesPage.new.informar_dados_tabulacao
+  Quando('informo os dados da tabulação') do
+    TabulaçõesPage.new.informar_dados_tabulacao
   end
   
-  Quando('informo o nome da tabulacao') do
-    TabulacoesPage.new.informar_nome_tabulacao
+  Quando('informo o nome da tabulação') do
+    TabulaçõesPage.new.informar_nome_tabulacao
   end
   
-  Quando('informo o nome na tela de consulta tabulacoes') do
-    TabulacoesPage.new.informo_nome_tela_consulta_tabulacao
+  Quando('informo o nome na tela de consultar tabulações') do
+    TabulaçõesPage.new.informo_nome_tela_consulta_tabulacao
   end
   
-  Quando('clico em Editar tabulacao') do
-    TabulacoesPage.new.clicar_btn_editar
+  Quando('clico em Editar tabulação') do
+    TabulaçõesPage.new.clicar_btn_editar
   end
   
-  Quando('edito os dados da tabulacao') do
-    TabulacoesPage.new.editar_dados_tabulacao
+  Quando('edito os dados da tabulação') do
+    TabulaçõesPage.new.editar_dados_tabulacao
   end
   
-  Quando('clico em deletar tabulacao') do
-    TabulacoesPage.new.clicar_btn_deletar
+  Quando('clico em deletar tabulação') do
+    TabulaçõesPage.new.clicar_btn_deletar
   end
 
   Quando('clico no checkbox global tabulações') do
-    TabulacoesPage.new.click_checkbox_global_tabulacao
+    TabulaçõesPage.new.click_checkbox_global_tabulacao
   end

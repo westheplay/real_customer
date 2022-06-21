@@ -1,4 +1,4 @@
-class ExecaoPage < PageHelper
+class ExcecaoPage < PageHelper
 
     # Pega a URL default
     set_url ""
@@ -14,8 +14,8 @@ class ExecaoPage < PageHelper
     element :input_name, :xpath, '//*[contains(text(),"Nome")]/../..//input'
     element :input_nome_linha, :xpath, '//*[contains(text(),"Nome")]/../../../div[5]/div[1]/div[1]//input'
     element :input_inicio, :xpath, '//*[contains(text(),"Nome")]/../../../div[5]/div[1]/div[2]//input'
-    element :input_fim, :path, '//*[contains(text(),"Nome")]/../../../div[5]/div[1]/div[3]//input'
-    element :input_name_criar, :xpath, '/html/body/div/div[2]/div[2]/div/div/div[2]/div/div/div/form/div/div[1]/div/div[1]/div/input'
+    element :input_fim, :xpath, '//*[contains(text(),"Nome")]/../../../div[5]/div[1]/div[3]//input'
+    element :input_name_criar, :xpath, "//*[contains(text(), 'Mensagem')]/../../../div/div/input"
     element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]'
     element :btn_adicionar_execao, :xpath, '//*[contains(text(),"Adicionar Exceção")]'
     element :btn_editar_execao, :xpath, '//*[@id="edittooltip0"]', match: :first
@@ -77,12 +77,13 @@ class ExecaoPage < PageHelper
 
     def informar_dados_execao
         puts "informar dados da exeção"
-
-        input_name_criar.set("exeção Teste Automatizado")
+        variavel = ['abb', 'aaa', 'fgj', 'fgy', 'wsdl', 'mva', 'xfb']
+        @i = rand(6)
+        sleep 1
+        input_name_criar.set("Exceção Teste Automatizado #{variavel[@i]}")
+        input_name_criar.send_keys(:enter)
         sleep 2
-        input_name_criar.set(:enter)
-        sleep 2
-        @msg = "exeção Teste Automatizado"
+        @msg = "Exceção Teste Automatizado #{variavel[@i]}"
         gravar_dados("features/arquivos/execao.txt", @msg)
         input_fuso_horario.set("America/Sao Paulo")
         input_fuso_horario.send_keys(:enter)
@@ -92,15 +93,16 @@ class ExecaoPage < PageHelper
         sleep 2
         input_nome_linha.set("teste execao um")
         sleep 2
-        input_inicio.set("09/06/2022 00:00:00")
-        input_fim.set("09/06/2022 23:59:59")
+        input_inicio.set("09/06/2025 00:00:00")
+        input_fim.set("09/06/2025 23:59:59")
+        input_fim.send_keys(:enter)
+        sleep 2
+        clicar_btn_adicionar_linha
     end
 
 
     def alterar_dados_execao
         puts "alterar dados do exeção"
-        @titulo = recuperar_dados("features/arquivos/execao.txt")
-        input_name.set(@titulo[0].to_s)
         input_fuso_horario.set("America/Sao Paulo")
         input_fuso_horario.send_keys(:enter)
         sleep 2
@@ -109,8 +111,12 @@ class ExecaoPage < PageHelper
         sleep 2
         input_nome_linha.set("teste execao um")
         sleep 2
-        input_inicio.set("09/06/2022 00:00:00")
-        input_fim.set("09/06/2022 23:59:59")
+        input_inicio.set("09/04/2025 00:00:00")
+        input_fim.set("09/04/2025 23:59:59")
+        input_fim.send_keys(:enter)
+        sleep 1
+        clicar_btn_adicionar_linha
+        sleep 1
     end
 
 

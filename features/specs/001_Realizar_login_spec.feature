@@ -2,7 +2,7 @@
 
 @Suite_loguin
 @Loguin
-Funcionalidade: loguin_001 - Realizar Loguin
+Funcionalidade:  Realizar Loguin
     
     @Realizar_loguincom_sucesso
     Cenario: Realizar Loguin com usuário válido

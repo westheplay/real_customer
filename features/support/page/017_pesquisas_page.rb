@@ -23,8 +23,6 @@ class PesquisasPage < PageHelper
 
 
      # methods 
-
-
     def informo_nome_tela_consulta_pesquisa
         puts "informo o nome na tela de consulta pesquisa"
         @titulo = recuperar_dados("features/arquivos/pesquisas.txt")
