@@ -2,7 +2,7 @@
 
 @Suite_grupos
 @grupos
-Funcionalidade: grupos
+Funcionalidade: Grupos
 
          
     @incluir_grupos

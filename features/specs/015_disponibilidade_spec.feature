@@ -2,7 +2,7 @@
 
 @Suite_disponibilidade
 @disponibilidade
-Funcionalidade: disponibilidade
+Funcionalidade: Disponibilidade
 
          
     @incluir_disponibilidade

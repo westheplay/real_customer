@@ -2,7 +2,7 @@
 
 @Suite_mural
 @Mural
-Funcionalidade: mural_002 - 
+Funcionalidade: Mural de apresentação 
     
     @Realizar_loguincom_sucesso
     Cenario: Realizar Loguin com usuário válido
