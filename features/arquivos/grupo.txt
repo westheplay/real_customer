@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Teste Automatizado grupo 62
-=======
-Teste Automatizado grupo 40
->>>>>>> origin/main
+Teste Automatizado grupo 35

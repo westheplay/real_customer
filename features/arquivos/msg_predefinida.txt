@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Teste Automatizado 52
-=======
-Teste Automatizado 35
->>>>>>> origin/main
+Teste Automatizado 755

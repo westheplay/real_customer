@@ -21,7 +21,7 @@ Funcionalidade: Cadastro de exceção
         E clico no botão Adicionar exceção
         E informo o nome da exceção 
         E clico no botão Confirmar
-        Entao o sistema deve exibir a mensagem "Minimo 3 caracteres"
+        Entao o sistema deve exibir a mensagem "Fuso horário é obrigatório"
 
     @alterar_excecao
     Cenario: Alterar exceção

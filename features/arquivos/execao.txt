@@ -1,1 +1,1 @@
-exeção Teste Automatizado
+Exceção Teste Automatizado wsdl

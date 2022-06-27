@@ -18,17 +18,23 @@ class TabulacoesPage < PageHelper
     element :btn_adicionar_subitem, :xpath, '//*[contains(text(),"subitem")]'
     element :btn_deletar_subitem, :xpath, '//*[contains(text(),"subitem")]'
     element :select_habilidade, :xpath, '//*[contains(text(),"Habilidade")]/../../../div[2]//input'
-    element :checkbox_global, :xpath, '//*[contains(text(),"Selecione")]/../../../../div[1]/div[2]'
-
+    element :checkbox_global_tabulacao, :xpath, '//*[contains(text(),"Selecione")]/../../../../div[1]/div[2]'
+    element :btn_x_habilidade, :xpath, '//*[contains(text(),"Global")]/../../../div[2]/div/div[2]/div'
 
 
 
      # methods 
 
 
+    def click_btn_x_habilidade
+        puts 'clicar x habilidade'
+        btn_x_habilidade.click
+    end
+
+
     def click_checkbox_global_tabulacao
         puts 'clicar no checkbox global'
-        checkbox_global.click
+        checkbox_global_tabulacao.click
         sleep 2
     end
 
@@ -110,9 +116,19 @@ class TabulacoesPage < PageHelper
         puts "editar dados tabulacoes"
         #@titulo = recuperar_dados("features/arquivos/tabulacoes.txt")
         #input_name.set(@titulo[0].to_s)
-        #checkbox_global.click
+        #sleep 4
+        #checkbox_global_tabulacao.click
+        sleep 2
+        btn_x_habilidade.click
+        sleep 2
         select_habilidade.set("CHAT_NUCLEO_AUTO")
+        sleep 2
         select_habilidade.send_keys(:enter)
+        sleep 2
+        select_habilidade.set("AUTO_PANE_NF")
+        sleep 2
+        select_habilidade.send_keys(:enter)
+        sleep 2
     end
 
 

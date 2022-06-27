@@ -104,7 +104,7 @@ class DepartamentosPage < PageHelper
     def informar_dados_departamento
         puts "Informar dados do departamento"
         sleep 3
-        @alt = rand(100)
+        @alt = rand(1000)
         input_criar_nome.set("Teste Automatizado #{@alt}")
         @msg = "Teste Automatizado #{@alt}"
         gravar_dados("features/arquivos/departamento.txt", @msg)

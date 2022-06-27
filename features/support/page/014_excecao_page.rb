@@ -34,7 +34,7 @@ class ExcecaoPage < PageHelper
     def informar_nome
         puts "setar o nome da exeção"
         @titulo = recuperar_dados("features/arquivos/execao.txt")
-        input_nome_criar.set(@titulo[0].to_s)
+        input_name_criar.set(@titulo[0].to_s)
     end
     
     
@@ -103,19 +103,20 @@ class ExcecaoPage < PageHelper
 
     def alterar_dados_execao
         puts "alterar dados do exeção"
-        input_fuso_horario.set("America/Sao Paulo")
-        input_fuso_horario.send_keys(:enter)
+        #input_fuso_horario.set("America/Sao Paulo")
+        #input_fuso_horario.send_keys(:enter)
+        #sleep 2
+        input_habilidade.set("CHAT_NUCLEO_AUTO")
         sleep 2
-        input_habilidade.set("TESTE_AUTOMACOES")
         input_habilidade.send_keys(:enter)
         sleep 2
-        input_nome_linha.set("teste execao um")
-        sleep 2
-        input_inicio.set("09/04/2025 00:00:00")
-        input_fim.set("09/04/2025 23:59:59")
-        input_fim.send_keys(:enter)
-        sleep 1
-        clicar_btn_adicionar_linha
+        #input_nome_linha.set("teste execao um")
+        #sleep 2
+        #input_inicio.set("09/04/2025 00:00:00")
+        #input_fim.set("09/04/2025 23:59:59")
+        #input_fim.send_keys(:enter)
+        #sleep 1
+        #clicar_btn_adicionar_linha
         sleep 1
     end
 

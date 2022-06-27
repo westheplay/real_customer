@@ -13,10 +13,10 @@ class UsuariosPage < PageHelper
     element :select_habilidade, :xpath, '//*[contains(text(),"Todas as habilidades")]'
     element :select_grupo, :xpath, '//*[contains(text(),"Todos os grupos")]'
     element :select_usuario, :xpath, "//*[contains(text(), 'Todos os perfis')]"
-    element :select_status, :xpath, "//*[contains(text(), 'Todos os status')]"
-    element :btn_editar_usuario, "#edit", match: :first
+    element :select_status, :xpath, "//*[contains(text(), 'Status')]/../div//input"
+    element :btn_editar_usuario, :xpath, '//*[@id="edittooltip0"]', match: :first
     element :btn_filtrar, :xpath, '//*[@class="av-valid"]/div[2]/div/div/button'
-    element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]/../../../button/div/div'
+    element :btn_buscar, :xpath, '//*[contains(text(),"Buscar")]/../../../button'
     element :btn_adicionar_usuario, :xpath, '//*[contains(text(),"Adicionar usuário")]'
     element :btn_acao, :xpath, '//*[contains(text(),"Ação")]'
     element :btn_generate_passuord, :xpath, '//*[contains(text(), "Generate")]'
@@ -35,17 +35,30 @@ class UsuariosPage < PageHelper
 
 
      # methods 
+    
+    
+    def informar_status_usuario(status)
+        puts "status informado: #{status}"
+        sleep 1
+        select_status.set(status)
+        sleep 1
+        select_status.send_keys(:enter)
+    end
 
 
-     def informar_nome_consulta
+
+    def informar_nome_consulta
         puts "setar o nome na tela de consulta"
-        input_name.set("Teste Automatizado usuario")
+        @titulo = recuperar_dados("features/arquivos/usuario.txt")
+        input_name.set(@titulo[0].to_s)
+        informar_status_usuario("Ativos")
     end
 
 
    def informar_nome
        puts "setar o nome do usuario"
-       input_name.set("Teste Automatizado usuario")
+       @titulo = recuperar_dados("features/arquivos/usuario.txt")
+        input_name.set(@titulo[0].to_s)
    end
 
 
@@ -63,6 +76,7 @@ class UsuariosPage < PageHelper
 
     def clicar_btn_buscar
         puts 'clicar no btn buscar usuario'
+        sleep 1
         btn_buscar.click
     end
 
@@ -84,6 +98,7 @@ class UsuariosPage < PageHelper
 
     def clicar_btn_confirmar
         puts "clicar btn confirmar"
+        sleep 3
         click_button('Confirmar')
     end
 
@@ -103,7 +118,7 @@ class UsuariosPage < PageHelper
         input_name.set("usuario #{@teste} Teste Automatizado")
         @msg = "usuario #{@teste} Teste Automatizado"
         gravar_dados("features/arquivos/usuario.txt", @msg)
-        @alt = rand(100)
+        @alt = rand(1000)
         input_email.set("robsonteste#{@alt}@tech.com")
         input_maximo_conversa.set("2")
         input_apelido.set("testeQA")
@@ -124,7 +139,7 @@ class UsuariosPage < PageHelper
         puts "alterar dados do usuario"
         @titulo = recuperar_dados("features/arquivos/usuario.txt")
         input_name.set(@titulo[0].to_s)
-        @alt = rand(100)
+        @alt = rand(1000)
         input_email.set("robsonteste#{@alt}@tech.com")
         input_maximo_conversa.set("2")
         input_apelido.set("testeQA")

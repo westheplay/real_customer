@@ -97,7 +97,7 @@ class RoteirosPage < PageHelper
     def informar_dados_roteiro
         puts "Informar dados da mensagem"
         sleep 2
-        @alt = rand(100).chr
+        @alt = rand(1000)
         puts "valor gerado #{@alt}" 
         input_criar_titulo.set("Teste Automatizado QA #{@alt}")
         @msg = "Teste Automatizado QA #{@alt}"

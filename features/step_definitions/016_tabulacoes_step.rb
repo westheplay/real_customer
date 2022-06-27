@@ -10,33 +10,33 @@ Quando('eu acesso o menu tabulações') do
   end
   
   Quando('clico no botão Adicionar tabulações') do
-    TabulaçõesPage.new.clicar_btn_adicionar_tabulacoes
+    TabulacoesPage.new.clicar_btn_adicionar_tabulacoes
   end
   
   Quando('informo os dados da tabulação') do
-    TabulaçõesPage.new.informar_dados_tabulacao
+    TabulacoesPage.new.informar_dados_tabulacao
   end
   
   Quando('informo o nome da tabulação') do
-    TabulaçõesPage.new.informar_nome_tabulacao
+    TabulacoesPage.new.informar_nome_tabulacao
   end
   
   Quando('informo o nome na tela de consultar tabulações') do
-    TabulaçõesPage.new.informo_nome_tela_consulta_tabulacao
+    TabulacoesPage.new.informo_nome_tela_consulta_tabulacao
   end
   
   Quando('clico em Editar tabulação') do
-    TabulaçõesPage.new.clicar_btn_editar
+    TabulacoesPage.new.clicar_btn_editar
   end
   
   Quando('edito os dados da tabulação') do
-    TabulaçõesPage.new.editar_dados_tabulacao
+    TabulacoesPage.new.editar_dados_tabulacao
   end
   
   Quando('clico em deletar tabulação') do
-    TabulaçõesPage.new.clicar_btn_deletar
+    TabulacoesPage.new.clicar_btn_deletar
   end
 
   Quando('clico no checkbox global tabulações') do
-    TabulaçõesPage.new.click_checkbox_global_tabulacao
+    TabulacoesPage.new.click_checkbox_global_tabulacao
   end

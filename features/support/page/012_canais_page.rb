@@ -37,7 +37,7 @@ class CanaisPage < PageHelper
     # methods 
 
 
-    def informar_nome_consulta
+    def informar_nome_consulta_canal
         puts "setar o nome na tela de consulta"
         @titulo = recuperar_dados("features/arquivos/canal.txt")
         input_name.set(@titulo[0].to_s)
@@ -117,7 +117,8 @@ class CanaisPage < PageHelper
         input_nome_criar.set("canal #{variavel_nome[@i]} Teste Automatizado")
         @msg = "canal #{variavel_nome[@i]} Teste Automatizado"
         gravar_dados("features/arquivos/canal.txt", @msg)
-        input_chave.set("123123")
+        @alt = rand(100000)
+        input_chave.set("123#{@alt}")
         input_habilidade.set("AUTO_PANE_NF")
         input_habilidade.send_keys(:enter)
         input_canal.set("Altu")
@@ -131,7 +132,7 @@ class CanaisPage < PageHelper
         input_pos_chat.send_keys(:enter)
         input_tempo_limite.set("5")
         input_id_integracao.set("321321321321")
-        input_chave_acesso.set("123212321")
+        input_chave_acesso.set("123212321#{@alt}")
         input_tamanho_maximo.set("6")
 
         
@@ -142,7 +143,8 @@ class CanaisPage < PageHelper
         puts "alterar dados do canal"
         @titulo = recuperar_dados("features/arquivos/canal.txt")
         input_nome_criar.set(@titulo[0].to_s)
-        input_chave.set("123123")
+        @alt = rand(100000)
+        input_chave.set("123123#{@alt}")
         input_habilidade.set("CHAT_NUCLEO_AUTO")
         sleep 2
         input_habilidade.send_keys(:enter)
@@ -157,7 +159,7 @@ class CanaisPage < PageHelper
         #input_pos_chat.send_keys(:enter)
         #input_tempo_limite.set("5")
         #input_id_integracao.set("321321321321")
-        input_chave_acesso.set("123212321")
+        input_chave_acesso.set("123212321#{@alt}")
         input_tamanho_maximo.set("6")
     end
 

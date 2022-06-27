@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Perfil aei Teste Automatizado
-=======
-Perfil fgj Teste Automatizado
->>>>>>> origin/main
+Perfil aeio Teste Automatizado

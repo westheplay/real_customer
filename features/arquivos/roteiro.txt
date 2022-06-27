@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Teste Automatizado QA J
-=======
-Teste Automatizado QA F
->>>>>>> origin/main
+Teste Automatizado QA 766

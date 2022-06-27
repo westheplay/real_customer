@@ -31,7 +31,7 @@ end
   end
   
   Quando('informo o nome na tela de consulta canal') do
-    CanaisPage.new.informar_nome_consulta
+    CanaisPage.new.informar_nome_consulta_canal
   end
   
   Quando('clico em deletar canal') do

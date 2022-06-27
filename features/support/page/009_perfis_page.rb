@@ -84,7 +84,7 @@ class PerfisPage < PageHelper
 
     def informar_dados_perfil
         puts "Informar dados do perfil"
-        variavel_texto = ['abc', 'aei', 'fgj', 'fgy']
+        variavel_texto = ['abcd', 'aeio', 'fgji', 'fgyv']
         variavel_random = rand(5)
         @teste = variavel_texto[variavel_random]
         sleep 1
